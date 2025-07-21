@@ -25,3 +25,22 @@ Automatizar a ingestão de dados de monitoria da operação BlueSix, realizando 
 
 ## Detalhes Técnicos ⚙
 
+### Fonte de Dados
+* Local: \\SNEPDB56C01\Repositorio\BDS\0045 - IMPORTACAO_MONITORIA_QUALIDADE_BSC\0001 - ENTRADAS\
+* Arquivo: MonitoriaBlue6_BSC.CSV
+* Codificação: UTF-8
+* Delimitador: ;
+
+### Transformações
+* Remoção de aspas e espaços em branco.
+* Conversão de datas (DATA_AVALIACAO) e números (NOTA).
+* Derivação do campo PERIODO com base no mês/ano da avaliação.
+* Inclusão do timestamp de carga (DTH_INPUT).
+
+### Base Final
+* Tabela destino: TB_BSC_MONITORIA_B6
+* Carga via: INSERT INTO ... SELECT FROM #STAGE
+* Regra de negócio: Antes da carga, remove registros da tabela final com DATA_AVALIACAO entre o menor e maior valor da carga atual.
+
+## Monitoramento ✅
+
