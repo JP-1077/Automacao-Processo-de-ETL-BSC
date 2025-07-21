@@ -44,3 +44,8 @@ Automatizar a ingestão de dados de monitoria da operação BlueSix, realizando 
 
 ## Monitoramento ✅
 
+* Tabela de Log: TB_PROCS_LOG
+* Nome do Processo: RCCM_IMPORT_MONITORIA_BLUESIX_BSC
+* Nome da Procedure: PR_IMPORT_MONITORIA_BLUESIX_BSC
+* Horário de Execução: 11:00
+
